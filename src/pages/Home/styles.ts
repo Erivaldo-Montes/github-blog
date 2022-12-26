@@ -32,6 +32,7 @@ export const ProfileInfo = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
   & > header {
     display: flex;
     font-size: 1.5rem;
@@ -59,6 +60,7 @@ export const ProfileInfo = styled.div`
       &::after {
         content: '';
         bottom: 0;
+        left: 0;
         position: absolute;
         width: 0;
         height: 1px;
@@ -82,13 +84,17 @@ export const GithubInfo = styled.div`
   gap: 1.5rem;
   position: absolute;
   bottom: 0;
-  color: ${(props) => props.theme['base-subtitle']};
+  width: 100%;
+  white-space: nowrap;
 
   span {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    & > span {
+      color: ${(props) => props.theme['base-subtitle']} !important;
+    }
   }
 `
 export const PostsContanier = styled.div`
