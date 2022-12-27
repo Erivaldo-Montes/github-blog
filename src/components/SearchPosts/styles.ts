@@ -21,20 +21,23 @@ export const SearchPostsContainer = styled.div`
     }
   }
 
-  textarea {
-    margin-top: 1.5rem;
-    background: ${(props) => props.theme['base-input']};
-    border-radius: 6px;
-    resize: none;
-    color: ${(props) => props.theme['base-text']};
-    border: 1px solid ${(props) => props.theme['base-border']};
-    padding: 0.75rem 1rem;
-    height: 3.125rem;
-    overflow: hidden;
-    display: flex;
+  form {
+    input {
+      margin-top: 1.5rem;
+      width: 100%;
+      background: ${(props) => props.theme['base-input']};
+      border-radius: 6px;
+      resize: none;
+      color: ${(props) => props.theme['base-text']};
+      border: 1px solid ${(props) => props.theme['base-border']};
+      padding: 0.75rem 1rem;
+      height: 3.125rem;
+      overflow: hidden;
+      display: flex;
 
-    &::placeholder {
-      color: ${(props) => props.theme['base-label']};
+      &::placeholder {
+        color: ${(props) => props.theme['base-label']};
+      }
     }
   }
 `
