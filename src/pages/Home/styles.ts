@@ -4,7 +4,7 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 54rem;
-  margin: 0 auto;
+  margin: 0 auto 14.625rem auto;
 `
 
 export const ProfileContainer = styled.div`

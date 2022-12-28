@@ -10,13 +10,14 @@ import {
   PostsContanier,
 } from './styles'
 import { SearchPosts } from '../../components/SearchPosts'
-import { Post } from './Post'
+import { PostCard } from './PostCard'
 import { useContext } from 'react'
 import { postContext } from '../../contexts/PostContext'
+import { NotFound } from '../../components/notFound'
 
 export function Home() {
-  const { issues, userGithubProfile } = useContext(postContext)
-  console.log(userGithubProfile)
+  const { posts, userGithubProfile } = useContext(postContext)
+
   return (
     <HomeContainer>
       <ProfileContainer>
@@ -51,18 +52,23 @@ export function Home() {
         </ProfileInfo>
       </ProfileContainer>
       <SearchPosts />
-      <PostsContanier>
-        {issues.map((issue) => {
-          return (
-            <Post
-              key={issue.id}
-              title={issue.title}
-              body={issue.body}
-              createdAt={issue.created_at}
-            />
-          )
-        })}
-      </PostsContanier>
+      {posts.length !== 0 ? (
+        <PostsContanier>
+          {posts.map((post) => {
+            return (
+              <PostCard
+                key={post.id}
+                body={post.body}
+                createdAt={post.created_at}
+                number={post.number}
+                title={post.title}
+              />
+            )
+          })}
+        </PostsContanier>
+      ) : (
+        <NotFound />
+      )}
     </HomeContainer>
   )
 }
