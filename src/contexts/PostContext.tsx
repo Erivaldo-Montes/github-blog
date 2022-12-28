@@ -23,7 +23,7 @@ export function PostContext({ children }: PostContextProps) {
   const [totalCount, setTotalCount] = useState(0)
 
   async function getUserGithubProfile() {
-    const response = await API.get('users/Erivaldo-Montes')
+    const response = await API.get('/users/Erivaldo-Montes')
     setUserGithubProfile(response.data)
   }
 
@@ -40,7 +40,7 @@ export function PostContext({ children }: PostContextProps) {
 
   async function getPostComplete(number: number) {
     const response = await API.get(
-      `https://api.github.com/repos/Erivaldo-Montes/github-blog/issues/${number}`,
+      `/repos/Erivaldo-Montes/github-blog/issues/${number}`,
     )
     setShowPost((state) => {
       return response.data
