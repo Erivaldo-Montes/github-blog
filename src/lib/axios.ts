@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-export const axiosFetch = axios.create({
-  baseURL: 'http://api.github.com',
+export const API = axios.create({
+  baseURL: 'https://api.github.com',
 })
